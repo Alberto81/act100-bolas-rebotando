@@ -39,7 +39,8 @@ public class BallDemo
         for (int index=0; index < numberOfBalls; index++)
         {
             int x = aleatorio.nextInt(250);//me aseguro que sale en la parte izda de la pantalla.
-            int y =  aleatorio.nextInt(410)-10;// y esta entre el suelo y el borde superior.
+            //del borde superior a la mitad de la distancia al suelo, para que boten.
+            int y =  aleatorio.nextInt(200)-10;
             int diam = aleatorio.nextInt(40)+5;//diametro de las bolas
             //codigo para color aleatorio
             int red = aleatorio.nextInt(256);
