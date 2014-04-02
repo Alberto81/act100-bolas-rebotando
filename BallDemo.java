@@ -46,6 +46,12 @@ public class BallDemo
             int red = aleatorio.nextInt(256);
             int green = aleatorio.nextInt(256);
             int blue = aleatorio.nextInt(256);
+            //el if evita bolas muy claras, que no se ven por el f0nd0.
+            if (red > 250 && green > 250 && blue > 250){
+                red = 0;
+                green = 0;
+                blue = 0;
+            }
             Color color = new Color(red, green, blue);
             //fin color
             bolas[index] = new BouncingBall(x, y, diam, color, ground, myCanvas);
@@ -56,7 +62,6 @@ public class BallDemo
             bolas[index].draw();
         }
 
-     
         // make them bounce
         boolean finished =  false;
         while(!finished) {
