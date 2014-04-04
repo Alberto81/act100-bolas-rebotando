@@ -29,11 +29,51 @@ public class BallDemo
     {
       Random aleatorio= new Random();
       myCanvas.setVisible(true);
-    
+      myCanvas.drawRectangle();//como el rectangulo es fijo, hice trampas y lo cree sin parametros
+      BoxBall[] bolas = new BoxBall[numberOfBalls];
+      
+      
+       for (int index=0; index < numberOfBalls; index++)
+        {
+            int x = aleatorio.nextInt(395)-35;//hago que salgan dentro del rectangulo
+            int y = aleatorio.nextInt(395)-35;
+            
+            int diam = aleatorio.nextInt(40)+5;//diametro de las bolas
+            //codigo para color aleatorio
+            int red = aleatorio.nextInt(256);
+            int green = aleatorio.nextInt(256);
+            int blue = aleatorio.nextInt(256);
+            //el if evita bolas muy claras, que no se ven por el f0nd0.
+            if (red > 250 && green > 250 && blue > 250){
+                red = 0;
+                green = 0;
+                blue = 0;
+            }
+            Color color = new Color(red, green, blue);
+            //fin color
+            bolas[index] = new BoxBall(x, y, diam, color, myCanvas);
+        }
 
+        //recorro el array dibujando las bolas
+        for (int index=0; index < numberOfBalls; index++){
+            bolas[index].draw();
+        }
+
+        // make them bounce
+        boolean finished =  false;
+        while(!finished) {
+            myCanvas.wait(50);  // small delay
+            for (int index=0; index < numberOfBalls; index++){
+                bolas[index].move();
+                if (bolas[index].getXPosition()>=430){
+                    finished = true;
+                }
+            }
+      
+      
     }
     
-    
+}
     
     /**
      * Simulate n bouncing balls
