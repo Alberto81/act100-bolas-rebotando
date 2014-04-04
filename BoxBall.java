@@ -27,7 +27,8 @@ public class BoxBall
     private final int leftPosition;
     private final int rightPosition;
     private Canvas canvas;
-    
+    int xs;
+    int ys;//xs y ys para dirección, lo pongo aki porqe el movimiento de la bola se simula con multiples ejecuciones de move
 
               //asta aqui
 
@@ -54,6 +55,9 @@ public class BoxBall
         color = ballColor;
         diameter = ballDiameter;
         
+          xs = 1;
+          ys = 1;//xs y ys para dirección
+        
         canvas = drawingCanvas;
     }
 
@@ -78,8 +82,7 @@ public class BoxBall
      * Move this ball according to its position and speed and redraw.
      **/
     public void move()
-    {    int xs = 1;
-         int ys = 1;//xs y ys para dirección
+    {    
         
       
         // remove from canvas at the current position
@@ -92,12 +95,12 @@ public class BoxBall
         
         
          // estos ifs para ver si tocan un lado del triangulo y hacerlos rebotar
-        if(yPosition >= (downPosition - diameter) || yPosition <= (downPosition - diameter) ){
+        if(yPosition >= (downPosition - diameter) || yPosition <= (upPosition + 2/diameter) ){
            ys = -ys;
         
         }
 
-       if(xPosition >= (rightPosition - diameter) || xPosition <= (leftPosition - diameter) ){
+       if(xPosition >= (rightPosition - diameter) || xPosition <= (leftPosition + 2/diameter) ){
            xs = -xs;
         
         }

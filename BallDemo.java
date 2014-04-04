@@ -35,8 +35,8 @@ public class BallDemo
       
        for (int index=0; index < numberOfBalls; index++)
         {
-            int x = aleatorio.nextInt(395)-35;//hago que salgan dentro del rectangulo
-            int y = aleatorio.nextInt(395)-35;
+            int x = aleatorio.nextInt(200)+40;//hago que salgan dentro del rectangulo
+            int y = aleatorio.nextInt(200)+40;
             
             int diam = aleatorio.nextInt(40)+5;//diametro de las bolas
             //codigo para color aleatorio
@@ -62,12 +62,10 @@ public class BallDemo
         // make them bounce
         boolean finished =  false;
         while(!finished) {
-            myCanvas.wait(50);  // small delay
+            myCanvas.wait(5);  // small delay
             for (int index=0; index < numberOfBalls; index++){
                 bolas[index].move();
-                if (bolas[index].getXPosition()>=430){
-                    finished = true;
-                }
+                
             }
       
       
