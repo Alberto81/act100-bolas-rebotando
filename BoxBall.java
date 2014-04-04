@@ -95,6 +95,9 @@ public class BoxBall
         
         
          // estos ifs para ver si tocan un lado del triangulo y hacerlos rebotar
+         //a tener en cuenta que  las posiciones yPosition y xPosition no indican el centro de la bola.
+         //x indica la posición más a la izda de la bola
+         //y indica la posicion más superior de la bola
         if(yPosition >= (downPosition - diameter) || yPosition <= (upPosition + 2/diameter) ){
            ys = -ys;
         
