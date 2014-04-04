@@ -255,13 +255,13 @@ public class Canvas
          graphic.drawLine(30, 30, 400, 30);   
 
         canvas.repaint();
-        graphic.drawLine(400, 30, 400, 400);   
+        graphic.drawLine(400, 30, 400, 300);   
    
         canvas.repaint();
-        graphic.drawLine(400, 400, 30, 400);   
+        graphic.drawLine(400, 300, 30, 300);   
         canvas.repaint();
         
-        graphic.drawLine(30, 400, 30, 30);   
+        graphic.drawLine(30, 300, 30, 30);   
         canvas.repaint();
     }
     

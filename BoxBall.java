@@ -45,7 +45,7 @@ public class BoxBall
     public BoxBall(int xPos, int yPos, int ballDiameter, Color ballColor, Canvas drawingCanvas)
     {
        //hacemos la caja
-         downPosition=400;//margenes del rectangulo
+         downPosition=300;//margenes del rectangulo
          upPosition=30;
          leftPosition=30;
          rightPosition=400;
