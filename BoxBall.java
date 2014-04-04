@@ -27,6 +27,8 @@ public class BoxBall
     private final int leftPosition;
     private final int rightPosition;
     private Canvas canvas;
+    
+
               //asta aqui
 
     /**
@@ -76,20 +78,31 @@ public class BoxBall
      * Move this ball according to its position and speed and redraw.
      **/
     public void move()
-    {
+    {    int xs = 1;
+         int ys = 1;//xs y ys para dirección
+        
+      
         // remove from canvas at the current position
         erase();
             
-        // compute new position
-        ySpeed += GRAVITY;
-        yPosition += ySpeed;
-        xPosition +=2;
-
-        // check if it has hit the ground
-        if(yPosition >= (groundPosition - diameter) && ySpeed > 0) {
-            yPosition = (int)(groundPosition - diameter);
-            ySpeed = -ySpeed + ballDegradation; 
+  
+        yPosition += ys;
+        xPosition +=xs;
+        
+        
+        
+         // estos ifs para ver si tocan un lado del triangulo y hacerlos rebotar
+        if(yPosition >= (downPosition - diameter) || yPosition <= (downPosition - diameter) ){
+           ys=-ys;
+        
         }
+
+       if(xPosition >= (rightPosition - diameter) || xPosition <= (leftPosition - diameter) ){
+           xs=-xs;
+        
+        }
+        
+        
 
         // draw again at new position
         draw();
