@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+import java.util.Random;
+
 /**
  * Class BouncingBall - a graphical ball that observes the effect of gravity. The ball
  * has the ability to move. Details of movement are determined by the ball itself. It

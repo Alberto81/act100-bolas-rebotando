@@ -20,9 +20,23 @@ public class BallDemo
     {
         myCanvas = new Canvas("Ball Demo", 600, 500);
     }
+    
+    
+     /**
+     * boxbounce a partir de bounce
+     */
+    public void boxBounce(int numberOfBalls)
+    {
+      Random aleatorio= new Random();
+      myCanvas.setVisible(true);
+    
 
+    }
+    
+    
+    
     /**
-     * Simulate two bouncing balls
+     * Simulate n bouncing balls
      */
     public void bounce(int numberOfBalls)
     {

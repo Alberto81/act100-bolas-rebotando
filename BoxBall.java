@@ -93,12 +93,12 @@ public class BoxBall
         
          // estos ifs para ver si tocan un lado del triangulo y hacerlos rebotar
         if(yPosition >= (downPosition - diameter) || yPosition <= (downPosition - diameter) ){
-           ys=-ys;
+           ys = -ys;
         
         }
 
        if(xPosition >= (rightPosition - diameter) || xPosition <= (leftPosition - diameter) ){
-           xs=-xs;
+           xs = -xs;
         
         }
         

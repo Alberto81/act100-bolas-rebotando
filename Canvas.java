@@ -250,6 +250,22 @@ public class Canvas
         canvas.repaint();
     }
 
+    public void drawRectangle()
+    {
+         graphic.drawLine(30, 30, 400, 30);   
+
+        canvas.repaint();
+        graphic.drawLine(400, 30, 400, 400);   
+   
+        canvas.repaint();
+        graphic.drawLine(400, 400, 30, 400);   
+        canvas.repaint();
+        
+        graphic.drawLine(30, 400, 30, 30);   
+        canvas.repaint();
+    }
+    
+    
     /**
      * Sets the foreground color of the Canvas.
      * @param  newColor   the new color for the foreground of the Canvas 
