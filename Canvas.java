@@ -250,18 +250,21 @@ public class Canvas
         canvas.repaint();
     }
 
+//dibujamos el rectangulo a partir de constantes, no me las reconoció hasta que las apliquè al nombre de la clase en la que estaban definidas, como public y 
+//no actua como una variable de clase? hay alguna forma de que reconozca las constantes directamente?
+    
     public void drawRectangle()
     {
-         graphic.drawLine(30, 30, 400, 30);   
+         graphic.drawLine(BoxBall.LEFT_POSITION,  BoxBall.UP_POSITION,  BoxBall.RIGHT_POSITION, BoxBall.UP_POSITION);   
 
         canvas.repaint();
-        graphic.drawLine(400, 30, 400, 300);   
+        graphic.drawLine(BoxBall.RIGHT_POSITION, BoxBall.UP_POSITION, BoxBall.RIGHT_POSITION, BoxBall.DOWN_POSITION);   
    
         canvas.repaint();
-        graphic.drawLine(400, 300, 30, 300);   
+        graphic.drawLine(BoxBall.RIGHT_POSITION, BoxBall.DOWN_POSITION, BoxBall.LEFT_POSITION, BoxBall.DOWN_POSITION);   
         canvas.repaint();
         
-        graphic.drawLine(30, 300, 30, 30);   
+        graphic.drawLine(BoxBall.LEFT_POSITION, BoxBall.DOWN_POSITION,  BoxBall.LEFT_POSITION, BoxBall.UP_POSITION);   
         canvas.repaint();
     }
     

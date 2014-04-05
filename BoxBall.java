@@ -23,10 +23,10 @@ public class BoxBall
     private int xPosition;
     private int yPosition;
     
-    private static final int DOWN_POSITION=300;//margenes del rectangulo
-    private static final int UP_POSITION=30;
-    private static final int LEFT_POSITION=30;
-    private static final int RIGHT_POSITION=400;
+    public static final int DOWN_POSITION=300;//margenes del rectangulo
+    public static final int UP_POSITION=30;
+    public static final int LEFT_POSITION=30;
+    public static final int RIGHT_POSITION=400;
     
     private Canvas canvas;
     int xs;
