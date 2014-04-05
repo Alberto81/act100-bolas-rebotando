@@ -22,10 +22,12 @@ public class BoxBall
     private int diameter;
     private int xPosition;
     private int yPosition;
-    private final int downPosition;//margenes del rectangulo
-    private final int upPosition;
-    private final int leftPosition;
-    private final int rightPosition;
+    
+    private static final int DOWN_POSITION=300;//margenes del rectangulo
+    private static final int UP_POSITION=30;
+    private static final int LEFT_POSITION=30;
+    private static final int RIGHT_POSITION=400;
+    
     private Canvas canvas;
     int xs;
     int ys;//xs y ys para dirección, lo pongo aki porqe el movimiento de la bola se simula con multiples ejecuciones de move
@@ -44,11 +46,7 @@ public class BoxBall
      */
     public BoxBall(int xPos, int yPos, int ballDiameter, Color ballColor, Canvas drawingCanvas)
     {
-       //hacemos la caja
-         downPosition=300;//margenes del rectangulo
-         upPosition=30;
-         leftPosition=30;
-         rightPosition=400;
+    
          
         xPosition = xPos;
         yPosition = yPos;
@@ -98,12 +96,12 @@ public class BoxBall
          //a tener en cuenta que  las posiciones yPosition y xPosition no indican el centro de la bola.
          //x indica la posición más a la izda de la bola
          //y indica la posicion más superior de la bola
-        if(yPosition >= (downPosition - diameter) || yPosition <= (upPosition + 2/diameter) ){
+        if(yPosition >= (DOWN_POSITION - diameter) || yPosition <= (UP_POSITION ) ){
            ys = -ys;
         
         }
 
-       if(xPosition >= (rightPosition - diameter) || xPosition <= (leftPosition + 2/diameter) ){
+       if(xPosition >= ( RIGHT_POSITION - diameter) || xPosition <= (LEFT_POSITION) ){
            xs = -xs;
         
         }
