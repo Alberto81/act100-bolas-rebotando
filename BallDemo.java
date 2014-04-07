@@ -12,7 +12,6 @@ import java.util.Random;
 public class BallDemo   
 {
     private Canvas myCanvas;
-   
 
     /**
      * Create a BallDemo object. Creates a fresh canvas and makes it visible.
@@ -21,24 +20,22 @@ public class BallDemo
     {
         myCanvas = new Canvas("Ball Demo", 600, 500);
     }
-    
-    
-     /**
+
+    /**
      * boxbounce a partir de bounce
      */
     public void boxBounce(int numberOfBalls)
     {
-      Random aleatorio= new Random();
-      myCanvas.setVisible(true);
-      myCanvas.drawRectangle();//como el rectangulo es fijo, hice trampas y lo cree sin parametros
-      BoxBall[] bolas = new BoxBall[numberOfBalls];
-      
-      
-       for (int index=0; index < numberOfBalls; index++)
+        Random aleatorio= new Random();
+        myCanvas.setVisible(true);
+        myCanvas.drawRectangle();//como el rectangulo es fijo, hice trampas y lo cree sin parametros
+        BoxBall[] bolas = new BoxBall[numberOfBalls];
+
+        for (int index=0; index < numberOfBalls; index++)
         {
             int x = aleatorio.nextInt(200)+40;//hago que salgan dentro del rectangulo
             int y = aleatorio.nextInt(200)+40;
-            
+
             int diam = aleatorio.nextInt(40)+5;//diametro de las bolas
             //codigo para color aleatorio
             int red = aleatorio.nextInt(256);
@@ -66,14 +63,11 @@ public class BallDemo
             myCanvas.wait(5);  // small delay
             for (int index=0; index < numberOfBalls; index++){
                 bolas[index].move();
-                
+
             }
-      
-      
+
+        }
     }
-    
-}
-    
     /**
      * Simulate n bouncing balls
      */

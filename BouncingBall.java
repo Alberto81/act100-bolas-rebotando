@@ -43,7 +43,7 @@ public class BouncingBall
      * @param drawingCanvas  the canvas to draw this ball on
      */
     public BouncingBall(int xPos, int yPos, int ballDiameter, Color ballColor,
-                        int groundPos, Canvas drawingCanvas)
+    int groundPos, Canvas drawingCanvas)
     {
         xPosition = xPos;
         yPosition = yPos;
@@ -77,7 +77,7 @@ public class BouncingBall
     {
         // remove from canvas at the current position
         erase();
-            
+
         // compute new position
         ySpeed += GRAVITY;
         yPosition += ySpeed;

@@ -22,21 +22,20 @@ public class BoxBall
     private int diameter;
     private int xPosition;
     private int yPosition;
-    
-   
+
     public static final int UP_POSITION=30;
     public static final int DOWN_POSITION=300;//margenes del rectangulo
     public static final int LEFT_POSITION=30;
     public static final int RIGHT_POSITION=400;
-    
+
     private Canvas canvas;
-    
+
     Random aleatorio = new Random();
-    
+
     int xs;
     int ys;//xs y ys para dirección, lo pongo aki porqe el movimiento de la bola se simula con multiples ejecuciones de move
 
-              //asta aqui
+    //asta aqui
 
     /**
      * Constructor for objects of class BouncingBall
@@ -50,32 +49,28 @@ public class BoxBall
      */
     public BoxBall(int xPos, int yPos, int ballDiameter, Color ballColor, Canvas drawingCanvas)
     {
-    
-         
+
         xPosition = xPos;
         yPosition = yPos;
         color = ballColor;
         diameter = ballDiameter;
-        
+
         canvas = drawingCanvas;
-         
+
         //bloqe para direcciones aleatorias                
         int a = aleatorio.nextInt(2);
-        xs=-1;
-        if(a==1){
-        xs = 1;
-        }
-        
-        a = aleatorio.nextInt(2);
-        ys=-1;
-        if(a==1){
-        ys = 1;
+        xs = -1;
+        if(a == 1){
+            xs = 1;
         }
 
-        
-       
+        int b = aleatorio.nextInt(2);
+        ys = -1;
+        if(b == 1){
+            ys = 1;
+        }
+
     }
-
     /**
      * Draw this ball at its current position onto the canvas.
      **/
@@ -98,32 +93,26 @@ public class BoxBall
      **/
     public void move()
     {    
-        
-      
+
         // remove from canvas at the current position
         erase();
-            
-  
+
         yPosition += ys;
         xPosition +=xs;
-        
-        
-        
-         // estos ifs para ver si tocan un lado del triangulo y hacerlos rebotar
-         //a tener en cuenta que  las posiciones yPosition y xPosition no indican el centro de la bola.
-         //x indica la posición más a la izda de la bola
-         //y indica la posicion más superior de la bola
+
+        // estos ifs para ver si tocan un lado del triangulo y hacerlos rebotar
+        //a tener en cuenta que  las posiciones yPosition y xPosition no indican el centro de la bola.
+        //x indica la posición más a la izda de la bola
+        //y indica la posicion más superior de la bola
         if(yPosition >= (DOWN_POSITION - diameter) || yPosition <= (UP_POSITION ) ){
-           ys = -ys;
-        
+            ys = -ys;
+
         }
 
-       if(xPosition >= ( RIGHT_POSITION - diameter) || xPosition <= (LEFT_POSITION) ){
-           xs = -xs;
-        
+        if(xPosition >= ( RIGHT_POSITION - diameter) || xPosition <= (LEFT_POSITION) ){
+            xs = -xs;
+
         }
-        
-        
 
         // draw again at new position
         draw();
