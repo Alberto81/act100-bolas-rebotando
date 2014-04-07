@@ -1,6 +1,6 @@
 import java.awt.*;
 import java.awt.geom.*;
-
+import java.util.Random;
 /**
  * Class BouncingBall - a graphical ball that observes the effect of gravity. The ball
  * has the ability to move. Details of movement are determined by the ball itself. It
@@ -30,6 +30,9 @@ public class BoxBall
     public static final int RIGHT_POSITION=400;
     
     private Canvas canvas;
+    
+    Random aleatorio = new Random();
+    
     int xs;
     int ys;//xs y ys para dirección, lo pongo aki porqe el movimiento de la bola se simula con multiples ejecuciones de move
 
@@ -54,10 +57,23 @@ public class BoxBall
         color = ballColor;
         diameter = ballDiameter;
         
-          xs = 1;
-          ys = 1;//xs y ys para dirección
-        
         canvas = drawingCanvas;
+         
+        //bloqe para direcciones aleatorias                
+        int a = aleatorio.nextInt(2);
+        xs=-1;
+        if(a==1){
+        xs = 1;
+        }
+        
+        a = aleatorio.nextInt(2);
+        ys=-1;
+        if(a==1){
+        ys = 1;
+        }
+
+        
+       
     }
 
     /**
