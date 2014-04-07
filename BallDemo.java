@@ -12,8 +12,7 @@ import java.util.Random;
 public class BallDemo   
 {
     private Canvas myCanvas;
-    
-    
+   
 
     /**
      * Create a BallDemo object. Creates a fresh canvas and makes it visible.

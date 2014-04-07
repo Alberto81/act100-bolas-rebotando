@@ -23,8 +23,9 @@ public class BoxBall
     private int xPosition;
     private int yPosition;
     
-    public static final int DOWN_POSITION=300;//margenes del rectangulo
+   
     public static final int UP_POSITION=30;
+    public static final int DOWN_POSITION=300;//margenes del rectangulo
     public static final int LEFT_POSITION=30;
     public static final int RIGHT_POSITION=400;
     
